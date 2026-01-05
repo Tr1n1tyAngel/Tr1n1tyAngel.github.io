@@ -155,7 +155,8 @@ h1{
 
 .hero-card-image img{
   width: 100%;
-  height: auto;      
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 .section{ padding: 54px 0; }
