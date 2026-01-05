@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name — Portfolio</title>
+    <meta name="description" content="Portfolio, CV, and game projects by Your Name." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="#top">Your Name</a>
+
+        <nav class="nav">
+          <a href="#projects">Games</a>
+          <a href="#cv">CV</a>
+          <a href="#about">About</a>
+          <a class="btn small" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="pill">Game Developer • UI • Sound Design</p>
+            <h1>
+              I build <span class="accent">playful</span> experiences and clean, readable UI.
+            </h1>
+            <p class="sub">
+              Short, punchy intro: what you do, what you’re good at, and what you’re looking for.
+              (Example: Unity / Unreal • Gameplay & Mechanics • UI & Audio)
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn" href="#projects">View Games</a>
+              <a class="btn ghost" href="#cv">Download CV</a>
+            </div>
+
+            <div class="social">
+              <a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
+              <a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://yourname.itch.io" target="_blank" rel="noreferrer">itch.io</a>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="avatar" aria-hidden="true"></div>
+            <div class="hero-card-body">
+              <h3>Currently</h3>
+              <ul>
+                <li>Building: <strong>Game Title / Project</strong></li>
+                <li>Focus: Gameplay loops, UI polish, sound</li>
+                <li>Open to: Internships / Junior roles / Freelance</li>
+              </ul>
+              <div class="mini">
+                <span>📍 Copenhagen / Remote</span>
+                <span>🎮 Unity / Unreal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Games & Projects</h2>
+            <p>Pick your best 3–6. Each card should answer: What is it? What did you do? What’s the result?</p>
+          </div>
+
+          <div class="grid">
+            <!-- CARD 1 -->
+            <article class="card">
+              <div class="thumb">
+                <!-- Replace with an image later: <img src="images/game1.jpg" alt="Game screenshot"> -->
+                <span>Screenshot / GIF</span>
+              </div>
+              <div class="card-body">
+                <h3>Game Title 1</h3>
+                <p class="meta">Unity • C# • PC</p>
+                <p>
+                  One-liner: what the game is and what makes it interesting.
+                </p>
+                <ul class="bullets">
+                  <li>My role: gameplay mechanics + UI</li>
+                  <li>Highlight: lock-on system / AI / level design</li>
+                </ul>
+                <div class="card-actions">
+                  <a class="link" href="#" target="_blank" rel="noreferrer">Play / Build</a>
+                  <a class="link" href="#" target="_blank" rel="noreferrer">Video</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 2 -->
+            <article class="card">
+              <div class="thumb"><span>Screenshot / GIF</span></div>
+              <div class="card-body">
+                <h3>Game Title 2</h3>
+                <p class="meta">Unreal • Blueprints</p>
+                <p>One-liner description.</p>
+                <ul class="bullets">
+                  <li>My role: systems + combat feel</li>
+                  <li>Highlight: VFX + sound polish</li>
+                </ul>
+                <div class="card-actions">
+                  <a class="link" href="#" target="_blank" rel="noreferrer">Play / Build</a>
+                  <a class="link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CARD 3 -->
+            <article class="card">
+              <div class="thumb"><span>Screenshot / GIF</span></div>
+              <div class="card-body">
+                <h3>App / Tool / Jam Game</h3>
+                <p class="meta">Android • Kotlin</p>
+                <p>One-liner description.</p>
+                <ul class="bullets">
+                  <li>My role: UI + implementation</li>
+                  <li>Highlight: clean UX flow</li>
+                </ul>
+                <div class="card-actions">
+                  <a class="link" href="#" target="_blank" rel="noreferrer">Demo</a>
+                  <a class="link" href="#" target="_blank" rel="noreferrer">Code</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CV -->
+      <section id="cv" class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>CV</h2>
+            <p>Keep it scannable: skills, tools, and 3–5 strongest highlights.</p>
+          </div>
+
+          <div class="cv-grid">
+            <div class="panel">
+              <h3>Highlights</h3>
+              <ul class="bullets">
+                <li>Shipped/Completed: X projects (game jams + prototypes)</li>
+                <li>Strengths: gameplay loops, UI polish, audio</li>
+                <li>Engines: Unity (C#), Unreal (Blueprints)</li>
+              </ul>
+              <!-- Replace href with your real PDF -->
+              <a class="btn" href="cv.pdf" download>Download CV (PDF)</a>
+            </div>
+
+            <div class="panel">
+              <h3>Skills</h3>
+              <div class="tags">
+                <span>Unity</span><span>C#</span><span>Unreal</span><span>Blueprints</span>
+                <span>UI/UX</span><span>Sound Design</span><span>Level Design</span>
+                <span>Git</span><span>Java</span><span>Kotlin</span><span>SQL</span>
+              </div>
+              <p class="small">
+                Tip: list what you can actually do well, not every tool you’ve touched once.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>About</h2>
+            <p>Write like a human. 5–7 lines max, then let your projects do the talking.</p>
+          </div>
+
+          <div class="about">
+            <p>
+              I’m a game developer focused on gameplay and mechanics, with strong UI and sound design skills.
+              I enjoy building systems that feel good to play, then polishing the experience until it’s simple and clear.
+            </p>
+            <p>
+              Right now I’m looking for opportunities in game development (intern/junior) and collaborative projects.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section alt">
+        <div class="container">
+          <div class="section-head">
+            <h2>Contact</h2>
+            <p>Make it frictionless.</p>
+          </div>
+
+          <div class="contact">
+            <a class="btn" href="mailto:you@email.com">Email me</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noreferrer">
+              Message on LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <p>© <span id="year"></span> Your Name</p>
+          <p class="small">Built with plain HTML/CSS • Hosted anywhere</p>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
