@@ -129,19 +129,7 @@ h1{
   box-shadow: var(--shadow);
   overflow:hidden;
 }
-.avatar{
-  height: 160px;          
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-  background: rgba(255,255,255,0.03);
-}
 
-.avatar img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;        
-  display: block;
-}
 .hero-card-body{ padding: 16px; }
 .hero-card h3{ margin: 0 0 10px; }
 .hero-card ul{ margin: 0 0 10px; padding-left: 18px; color: var(--muted); }
@@ -152,7 +140,19 @@ h1{
   color: var(--faint);
   font-size: 0.95rem;
 }
+.hero-card-image{
+  height: 160px;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
 
+.hero-card-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .section{ padding: 54px 0; }
 .section.alt{
   background: rgba(255,255,255,0.03);
