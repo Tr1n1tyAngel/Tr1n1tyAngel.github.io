@@ -1,13 +1,13 @@
 :root{
-  --bg: #0b0d12;
-  --panel: rgba(99, 7, 136, 0.212);
-  --panel-strong: rgba(45, 3, 61, 0.212);
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.70);
-  --faint: rgba(255,255,255,0.55);
-  --border: rgba(195, 96, 235, 0.212);
-  --accent: #ad9cee;
-  --shadow: 0 18px 50px rgba(0,0,0,0.35);
+  --bg: #070313;
+  --panel: rgba(123, 78, 255, 0.16);
+  --panel-strong: rgba(60, 16, 110, 0.18);
+  --text: rgba(255,255,255,0.94);
+  --muted: rgba(255,255,255,0.72);
+  --faint: rgba(255,255,255,0.56);
+  --border: rgba(150, 100, 255, 0.18);
+  --accent: #caa2ff;
+  --shadow: 0 18px 50px rgba(0,0,0,0.45);
 }
 
 *{ box-sizing: border-box; }
@@ -15,8 +15,8 @@ html,body{ margin:0; padding:0; }
 body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(156, 133, 241, 0.18), transparent 60%),
-    radial-gradient(900px 500px at 100% 10%, rgba(51, 11, 75, 0.12), transparent 55%),
+    radial-gradient(1200px 600px at 20% -10%, rgba(123, 78, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 100% 10%, rgba(86, 32, 136, 0.12), transparent 55%),
     var(--bg);
   color: var(--text);
   line-height: 1.55;
@@ -93,6 +93,11 @@ a:hover{ opacity: 0.9; }
   display: flex;
   flex-direction: column;
   gap: 14px;
+  align-self: start;
+}
+
+.hero-copy{
+  align-self: start;
 }
 .pill{
   display:inline-block;
@@ -201,6 +206,14 @@ h1{
   color: var(--faint);
   background: rgba(255,255,255,0.04);
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .card-body{ padding: 14px; }
 .card-body h3{ margin: 0 0 6px; }
