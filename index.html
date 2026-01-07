@@ -97,8 +97,7 @@
                   <li>Highlights: Horror/Advanced enemy AI /Level design</li>
                 </ul>
                 <div class="card-actions">
-                  <a class="link" href="#" target="_blank" rel="noreferrer"></a>
-                  <a class="link" href="#" target="_blank" rel="noreferrer"></a>
+                  <button class="btn small" disabled>Coming Soon</button>
                 </div>
               </div>
             </article>
@@ -122,8 +121,8 @@
                   <li>Highlights: Movement and Combat feel/Environment and UI design</li>
                 </ul>
                 <div class="card-actions">
-                  <a class="link" href="https://tr1n1tyangel.itch.io/nature-crawls" target="_blank" rel="noreferrer">Play</a>
-                  <a class="link" href="#" target="_blank" rel="noreferrer"></a>
+                  <a class="btn small" href="https://tr1n1tyangel.itch.io/nature-crawls" target="_blank" rel="noreferrer">Play</a>
+                  
                 </div>
               </div>
             </article>
@@ -147,8 +146,8 @@
                   <li>Highlights: Inventory Systems/Art Design</li>
                 </ul>
                 <div class="card-actions">
-                  <a class="link" href="https://tr1n1tyangel.itch.io/kickthekicks" target="_blank" rel="noreferrer">Play</a>
-                  <a class="link" href="#" target="_blank" rel="noreferrer"></a>
+                  <a class="btn small" href="https://tr1n1tyangel.itch.io/kickthekicks" target="_blank" rel="noreferrer">Play</a>
+                  
                 </div>
               </div>
             </article>
@@ -235,6 +234,82 @@
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script>
+      (function(){
+        // Floating thumbnail previews: move .thumb-popup to body and position fixed
+        if (window.matchMedia && window.matchMedia('(max-width: 920px)').matches) return;
+        document.addEventListener('DOMContentLoaded', function(){
+          const thumbs = document.querySelectorAll('.thumb');
+          let active = null;
+
+          function updatePosition(thumb, popup){
+            if (!thumb || !popup) return;
+            const rect = thumb.getBoundingClientRect();
+
+            // ensure visible for measurement
+            popup.style.display = 'block';
+            popup.style.position = 'fixed';
+            popup.style.pointerEvents = 'none';
+            popup.style.maxWidth = Math.min(420, window.innerWidth - 24) + 'px';
+
+            // Measure popup after applying max width
+            popup.style.left = '0px';
+            popup.style.top = '0px';
+            const pRect = popup.getBoundingClientRect();
+            const popupW = Math.min(pRect.width, Math.min(420, window.innerWidth - 24));
+            let left = rect.left + rect.width/2 - popupW/2;
+            left = Math.max(8, Math.min(left, window.innerWidth - popupW - 8));
+
+            // Prefer placing above; if not enough space place below
+            let top = rect.top - pRect.height - 8;
+            if (top < 8) top = rect.bottom + 8;
+            top = Math.max(8, Math.min(top, window.innerHeight - pRect.height - 8));
+
+            popup.style.left = left + 'px';
+            popup.style.top = top + 'px';
+          }
+
+          function showPopup(thumb, popup){
+            if (!popup) return;
+            if (popup.parentElement !== document.body) document.body.appendChild(popup);
+            popup.classList.add('floating');
+            popup.style.willChange = 'transform, opacity, left, top';
+            updatePosition(thumb, popup);
+            // small delay to allow measurement, then fade in
+            requestAnimationFrame(()=> { popup.style.opacity = '1'; popup.style.transform = 'none'; });
+            active = { thumb, popup };
+          }
+
+          function hidePopup(popup){
+            if (!popup) return;
+            popup.style.opacity = '0';
+            // remove floating class after transition to restore original DOM placement if desired
+            setTimeout(()=>{
+              if (!popup) return;
+              popup.classList.remove('floating');
+              popup.style.display = 'none';
+              active = null;
+            }, 200);
+          }
+
+          thumbs.forEach(thumb => {
+            const popup = thumb.querySelector('.thumb-popup');
+            if (!popup) return;
+            // hide initial duplicates in place
+            popup.style.display = 'none';
+            popup.style.opacity = '0';
+            popup.style.transition = 'opacity 180ms ease, transform 180ms ease';
+
+            thumb.addEventListener('mouseenter', ()=> showPopup(thumb, popup));
+            thumb.addEventListener('mouseleave', ()=> hidePopup(popup));
+            // keep following position while scrolling if active
+            window.addEventListener('scroll', ()=> { if (active && active.popup === popup) updatePosition(thumb, popup); }, { passive: true });
+            window.addEventListener('resize', ()=> { if (active && active.popup === popup) updatePosition(thumb, popup); });
+          });
+        });
+      })();
+
     </script>
   </body>
 </html>

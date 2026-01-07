@@ -85,6 +85,12 @@ a:hover{ opacity: 0.9; }
 }
 .btn:hover{ transform: translateY(-1px); transition: 160ms ease; }
 .btn:active{ transform: translateY(0px); }
+/* disabled state for .btn elements */
+.btn[disabled], .btn.disabled{
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
 
 .hero{
   padding: 56px 0 26px;
@@ -213,7 +219,7 @@ h1{
   color: var(--faint);
   background: rgba(255,255,255,0.04);
   border-bottom: 1px solid var(--border);
-  overflow: visible;
+  overflow: hidden; /* keep thumbnail images contained */
   position: relative;
 }
 
@@ -221,18 +227,22 @@ h1{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top; /* align image top with thumbnail top */
   display: block;
 }
 
+/* Ensure the inner link wrapper fills the thumbnail so the image stays clipped */
+.thumb-link{ width:100%; height:100%; display:block; }
+.thumb-link img{ width:100%; height:100%; object-fit: cover; display:block; }
+
 /* Per-thumbnail framing tweaks */
 .thumb--nature img{
-  /* move image down inside the thumbnail to show faces */
-  object-position: center 70%;
+  /* align top and keep horizontal centering */
+  object-position: center top;
 }
 .thumb--kick img{
-  /* nudge left/down so the title/logo shows */
-  object-position: 25% 60%;
+  /* nudge left while aligning top so the title/logo shows */
+  object-position: 25% 0%;
 }
 
 /* Popup preview shown above each card on hover (desktop only) */
@@ -256,6 +266,15 @@ h1{
 }
 .thumb-popup img{display:block; width:100%; height:auto; border-radius:6px;}
 .thumb:hover .thumb-popup{opacity:1; transform: translateX(-50%) scale(1); pointer-events:auto;}
+/* When the popup is shown as a floating element (moved to body), apply fixed positioning
+   and keep pointer-events disabled so the underlying thumbnail retains hover state. */
+.thumb-popup.floating{
+  position: fixed !important;
+  transform: none !important;
+  pointer-events: none !important;
+  z-index: 1200 !important;
+  /* allow JS to set `left`/`top` so the popup appears beside its thumbnail */
+}
 @media (max-width: 920px){ .thumb-popup{ display:none; } }
 
 .card-body{ padding: 14px; }
