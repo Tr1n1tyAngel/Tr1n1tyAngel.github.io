@@ -219,10 +219,19 @@ h1{
 .thumb img{
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
-  background: rgba(0,0,0,0.03);
+}
+
+/* Per-thumbnail framing tweaks */
+.thumb--nature img{
+  /* move crop slightly up to show both characters' faces */
+  object-position: center 20%;
+}
+.thumb--kick img{
+  /* align left so the title/logo is visible */
+  object-position: left center;
 }
 .card-body{ padding: 14px; }
 .card-body h3{ margin: 0 0 6px; }
