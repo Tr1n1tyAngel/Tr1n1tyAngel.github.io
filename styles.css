@@ -213,7 +213,7 @@ h1{
   color: var(--faint);
   background: rgba(255,255,255,0.04);
   border-bottom: 1px solid var(--border);
-  overflow: hidden;
+  overflow: visible;
   position: relative;
 }
 
