@@ -214,6 +214,7 @@ h1{
   background: rgba(255,255,255,0.04);
   border-bottom: 1px solid var(--border);
   overflow: hidden;
+  position: relative;
 }
 
 .thumb img{
@@ -226,12 +227,48 @@ h1{
 
 /* Per-thumbnail framing tweaks */
 .thumb--nature img{
-  /* move crop slightly up to show both characters' faces */
-  object-position: center 20%;
+  
+  object-position: center 50%;
 }
 .thumb--kick img{
   /* align left so the title/logo is visible */
   object-position: left center;
+}
+
+/* Hover popup (full image preview) */
+.thumb-popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.98);
+  max-width: 90vw;
+  max-height: 80vh;
+  padding: 6px;
+  background: rgba(10,8,12,0.96);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.06);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+  z-index: 1200;
+}
+.thumb-popup img{
+  display: block;
+  max-width: calc(90vw - 12px);
+  max-height: calc(80vh - 12px);
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+}
+.thumb:hover .thumb-popup{
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+@media (max-width: 920px){
+  .thumb-popup{ display: none; }
 }
 .card-body{ padding: 14px; }
 .card-body h3{ margin: 0 0 6px; }
