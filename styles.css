@@ -346,6 +346,58 @@ h1{
   padding-top: 18px;
 }
 
+/*Game Reviews*/
+.review-tiles{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  align-items: start; 
+  padding-bottom: 90px;
+}
+
+.review-tile{
+  display: inline-flex;          /* so it doesn't feel like a full bar */
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  width: 100%;                   /* each tile fills its grid cell */
+  max-width: 200px;              /* stops it from getting stupid-wide on huge screens */
+}
+.review-line{
+  display: block;
+  margin: 6px 0;
+  color: var(--muted);
+}
+.review-tile:hover{
+  transform: translateY(-2px);
+  transition: 160ms ease;
+}
+
+.tile-title{
+  font-weight: 700;
+}
+
+.tile-meta{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* keep score close to title */
+  gap: 10px;
+  color: var(--muted);
+}
+
+.tile-score{
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  font-weight: 700;
+}
+
 /* Responsive */
 @media (max-width: 920px){
   .hero-inner{ grid-template-columns: 1fr; }
