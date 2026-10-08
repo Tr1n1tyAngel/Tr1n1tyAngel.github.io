@@ -4,7 +4,7 @@
 --surface-2:#201d29;
 --text:#f4f0f7;
 --muted:#b6b0c1;
---accent:#bd9af6;
+--accent:#a07bd0;
 --border:#35303f;
 --green:#a4d5b3;
 --radius:14px;
@@ -89,7 +89,7 @@ display:flex;
 align-items:center;
 justify-content:space-between;
 gap:28px;
-min-height:88px}
+min-height:72px}
 .logo{
 display:flex;
 align-items:center;
@@ -123,8 +123,8 @@ background:radial-gradient(ellipse at 82% 30%,#38264430,transparent 55%)}
 .hero-inner{
 display:grid;
 grid-template-columns:1.25fr 1fr;
-gap:75px;
-padding-block:85px 65px;
+gap:48px;
+padding-block:48px 36px;
 align-items:center}
 .hero-copy>.eyebrow{
 display:flex;
@@ -169,7 +169,7 @@ background:var(--accent);
 border-color:var(--accent);
 color:#17121f}
 .btn.primary:hover{
-background:#d2b5ff}
+background:#ad89da}
 .social{
 display:flex;
 gap:25px;
@@ -177,7 +177,7 @@ font-size:12px;
 color:var(--muted);
 margin-top:28px}
 .portrait-frame{
-height:410px;
+height:350px;
 border-radius:100px 14px 14px 14px;
 overflow:hidden;
 position:relative;
@@ -239,13 +239,13 @@ color:var(--muted);
 font-size:9px;
 letter-spacing:.12em}
 .section{
-padding-block:90px}
+padding-block:54px}
 .section-head{
 display:flex;
 align-items:end;
 justify-content:space-between;
 gap:40px;
-margin-bottom:36px}
+margin-bottom:24px}
 .section-head p{
 font-size:13px;
 margin-bottom:18px}
@@ -289,7 +289,7 @@ color:#fff;
 font-size:9px;
 letter-spacing:.13em}
 .project-copy{
-padding:32px}
+padding:26px}
 .project-top{
 display:flex;
 align-items:center;
@@ -302,7 +302,7 @@ font-size:9px;
 border:1px solid #4c425b;
 border-radius:5px;
 padding:4px 8px;
-color:#d0bcf0;
+color:#b096cd;
 white-space:nowrap}
 .project h3{
 font-size:30px;
@@ -343,7 +343,7 @@ display:grid;
 grid-template-columns:1fr 1fr;
 gap:24px}
 .compact .project-image,.concept-art{
-height:270px}
+height:220px}
 .compact{
 display:flex;
 flex-direction:column}
@@ -383,7 +383,7 @@ transform:rotate(-30deg);
 filter:blur(15px)}
 .concept-label{
 z-index:1;
-color:#e8ddf9;
+color:#baa4d1;
 font-size:15px;
 letter-spacing:.22em}
 .concept-caption{
@@ -404,7 +404,7 @@ background:#141218}
 .experience-layout{
 display:grid;
 grid-template-columns:1fr 1.3fr;
-gap:100px}
+gap:48px}
 .experience-intro>p:first-child{
 font-size:19px;
 line-height:1.8;
@@ -425,7 +425,7 @@ margin-top:24px;
 max-width:350px}
 .job{
 border-top:1px solid var(--border);
-padding:23px 0}
+padding:18px 0}
 .job:first-child{
 border-color:#80619e}
 .job-meta{
@@ -460,11 +460,11 @@ transform:rotate(45deg)}
 .about-layout{
 display:grid;
 grid-template-columns:1fr 1.1fr;
-gap:100px}
+gap:48px}
 .about-lead{
 font-size:18px;
 max-width:370px;
-margin-top:34px;
+margin-top:22px;
 line-height:1.8;
 color:var(--accent)}
 .about-copy>p{
@@ -492,7 +492,7 @@ margin-top:20px}
 .cv-banner{
 background:var(--surface-2);
 border:1px solid #4e405f;
-padding:35px 42px;
+padding:26px 32px;
 border-radius:var(--radius);
 display:flex;
 justify-content:space-between;
@@ -573,7 +573,7 @@ font-size:10px}
 .panel{
 border:1px solid var(--border);
 border-radius:var(--radius);
-padding:32px;
+padding:26px;
 background:var(--surface)}
 .panel>p{
 max-width:78ch}
@@ -592,7 +592,7 @@ color:var(--muted)}
 
 @media(min-width:1500px){
 .hero-inner{
-padding-block:105px 85px}
+padding-block:60px 44px}
 }
 
 @media(max-width:1000px){
@@ -640,7 +640,7 @@ html{
 scroll-padding-top:130px}
 .hero-inner{
 grid-template-columns:1fr;
-padding-block:45px;
+padding-block:32px;
 gap:38px}
 h1{
 font-size:clamp(55px,12vw,80px)}
@@ -651,14 +651,14 @@ max-width:500px;
 width:100%;
 margin:auto}
 .portrait-frame{
-height:400px}
+height:320px}
 .hero-bottom{
 font-size:8px;
 flex-wrap:wrap}
 .hero-bottom>span:nth-child(2){
 display:none}
 .section{
-padding-block:58px}
+padding-block:38px}
 .section-head{
 display:block;
 margin-bottom:28px}
@@ -669,7 +669,7 @@ grid-template-columns:1fr}
 .featured .project-image{
 height:290px}
 .compact .project-image,.concept-art{
-height:240px}
+height:200px}
 .project-copy{
 padding:25px}
 .project h3{
@@ -721,6 +721,20 @@ scroll-behavior:auto}
 transition:none!important}
 }
 
-.featured .project-image{min-height:460px}
+.featured .project-image{min-height:360px}
 .featured .project-image img{position:absolute;inset:0}
 @media(max-width:760px){.featured .project-image{min-height:290px}}
+
+/* Keep the introduction and education balanced without an empty left column. */
+.about-layout { grid-template-columns: .9fr 1.1fr; align-items:start; }
+.about-copy > p { margin-bottom:16px; }
+.hero-bottom { padding-block:16px; }
+.project-top { margin-bottom:18px; }
+.contribution { margin-top:16px; padding-top:14px; }
+.logo { font-size:15px; }
+@media(max-width:760px) {
+  .about-layout { grid-template-columns:1fr; gap:22px; }
+  .hero-inner { gap:26px; }
+  .project-copy { padding:22px; }
+  .portrait-frame { height:320px; }
+}
